@@ -1,0 +1,9 @@
+services:
+  ntp2038:
+    image: ichikawayukko/ntp2038
+    build:
+      context: .
+    ports:
+      - "123:123/udp"
+    container_name: ntp2038
+
