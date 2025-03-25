@@ -2,6 +2,9 @@
 The NTP server always returns year 2038 for testing purpose.  
 常に2038年を返すテスト用NTPサーバ（ぉ
 
+# NTP_YEAR
+You can set `NTP_YEAR` variable for return another year.
+
 # Test server
 You can connect to [ntp2038.akiba.yuriko.co.nz](ntp2038.akiba.yuriko.co.nz) for test this NTP server! (Sorry, IPv6 only)
 
