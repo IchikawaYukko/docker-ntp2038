@@ -5,6 +5,7 @@ services:
       context: .
     ports:
       - "123:123/udp"
+      - "323:323/udp"
     # You can specify the year of NTP server here.
     # default: 2038
     #environment:
