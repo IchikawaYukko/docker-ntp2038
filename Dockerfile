@@ -1,6 +1,5 @@
 FROM	alpine:3.21
-
-ENV	TZ UTC
+LABEL	maintainer="github.com/IchikawaYukko"
 
 COPY	chrony.conf /etc/chrony/chrony.conf
 COPY	*.sh /

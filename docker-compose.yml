@@ -7,9 +7,14 @@ services:
       - "123:123/udp"
       - "323:323/udp"
     # You can specify the year of NTP server here.
-    # default: 2038
+    # default:
+    #   OFFSET_YEAR: differense from 2038
+    #   OFFSET_DAYS: 3 (Leap year 2028, 2032, 2036)
+    #   SERVER:      pool.ntp.org
     #environment:
-    #  - NTP_YEAR=2022
+    #  - OFFSET_YEAR=13
+    #  - OFFSET_DAYS=3
+    #  - SERVER=pool.ntp.org
     container_name: ntp2038
     restart: always
 
