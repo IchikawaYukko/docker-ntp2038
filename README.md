@@ -2,9 +2,33 @@
 The NTP server always returns year 2038 for testing purpose.  
 常に2038年を返すテスト用NTPサーバ（ぉ
 
-# NTP_YEAR
-You can set `NTP_YEAR` variable for return another year.  
-`NTP_YEAR` 環境変数を設定することで、ほかの年を返すことも可能。
+# Docker Hub Image
+You can pull [ichikawayukko/ntp2038](https://hub.docker.com/r/ichikawayukko/ntp2038) image from Doker Hub to use!
+
+どっかーはぶに置いてある ichikawayukko/ntp2038 イメージをご利用ください！
+
+# Enviroment Variables / 環境変数
+You can set `OFFSET_YEAR`, `OFFSET_DAYS` variable to return another year.  
+`OFFSET_YEAR`, `OFFSET_DAYS` 環境変数を設定することで、ほかの年を返すことも可能。
+## OFFSET_YEAR
+Set offset years  
+Default: Diference from year 2038. (`13` on Year 2025)
+
+何年分ずらした日時を返すのかを指定します  
+デフォルト: 2038年との差分（2025年の場合は`13`）
+## OFFSET_DAYS
+Set offset days. (Leap years)  
+Default: `3` (Leap year 2028, 2032, 2036)
+
+何日分ずらした日時を返すのかを指定します（閏年用）  
+デフォルト： `3` （閏年3日分。2028, 2032, 2036年用）
+
+## SERVER
+Set upstream NTP server to sync.  
+Default: `pool.ntp.org`
+
+同期する上流のNTPサーバを指定します  
+デフォルト: `pool.ntp.org`
 
 # Test server
 You can connect to [ntp2038.akiba.yuriko.co.nz](ntp2038.akiba.yuriko.co.nz) for test this NTP server! (Sorry, IPv6 only)
