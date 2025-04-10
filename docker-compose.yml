@@ -18,8 +18,8 @@ services:
       - NET_ADMIN
     devices:
       - "/dev/ptp0:/dev/ptp0"
-      - "/dev/ptp0:/dev/ptp1"
-      - "/dev/ptp0:/dev/ptp2"
-      - "/dev/ptp0:/dev/ptp3"
+      - "/dev/ptp1:/dev/ptp1"
+      - "/dev/ptp2:/dev/ptp2"
+      - "/dev/ptp3:/dev/ptp3"
     network_mode: host
 
