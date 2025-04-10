@@ -3,9 +3,6 @@ services:
     image: ichikawayukko/ntp2038
     build:
       context: .
-    ports:
-      - "123:123/udp"
-      - "323:323/udp"
     # You can specify the year of NTP server here.
     # default:
     #   OFFSET_YEAR: differense from 2038
@@ -16,5 +13,13 @@ services:
     #  - OFFSET_DAYS=3
     #  - SERVER=pool.ntp.org
     container_name: ntp2038
-    restart: always
+    restart: on-failure:10
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - "/dev/ptp0:/dev/ptp0"
+      - "/dev/ptp0:/dev/ptp1"
+      - "/dev/ptp0:/dev/ptp2"
+      - "/dev/ptp0:/dev/ptp3"
+    network_mode: host
 
