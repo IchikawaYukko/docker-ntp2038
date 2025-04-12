@@ -6,6 +6,7 @@ services:
     # You can specify the year of NTP server here.
     # default:
     #   OFFSET_YEAR: differense from 2038
+    #     * Max offset is +85years. (Year 2110 from 2025)
     #   OFFSET_DAYS: 3 (Leap year 2028, 2032, 2036)
     #   SERVER:      pool.ntp.org
     #environment:
