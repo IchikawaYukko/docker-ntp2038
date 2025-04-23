@@ -14,10 +14,20 @@ if [ -z "$OFFSET_DAYS" ]; then
   OFFSET_DAYS=3
 fi
 
+# If not set ADDITIONAL_CONFIG, define by empty value.
+if [ -z "$ADDITIONAL_CONFIG" ]; then
+  ADDITIONAL_CONFIG=""
+fi
+
 echo Offsetting $OFFSET_YEAR year + $OFFSET_DAYS days
 cp /etc/chrony/chrony.conf /etc/chrony/chrony.conf.org
 sed -e "s/_OFFSET_SEC_/+$( expr \( $OFFSET_YEAR \* 365 + $OFFSET_DAYS \) \* 24 \* 60 \* 60)/" /etc/chrony/chrony.conf.org > /etc/chrony/chrony.conf.offset
 sed -e "s/_SERVER_/$SERVER/" /etc/chrony/chrony.conf.offset > /etc/chrony/chrony.conf
+
+# If ADDITIONAL_CONFIG is not exist in config, add that config.
+if ! fgrep -q "$ADDITIONAL_CONFIG" /etc/chrony/chrony.conf; then
+  echo $ADDITIONAL_CONFIG >> /etc/chrony/chrony.conf
+fi
 
 # Exec chronyc after 10 sec of start daemon
 ./delay_run.sh &

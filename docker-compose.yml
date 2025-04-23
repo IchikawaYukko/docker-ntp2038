@@ -9,10 +9,13 @@ services:
     #     * Max offset is +85years. (Year 2110 from 2025)
     #   OFFSET_DAYS: 3 (Leap year 2028, 2032, 2036)
     #   SERVER:      pool.ntp.org
+    #   ADDITIONAL_CONFIG:
+    #                Empty (Additional configuration line. For adding peer, server etc...)
     #environment:
     #  - OFFSET_YEAR=13
     #  - OFFSET_DAYS=3
     #  - SERVER=pool.ntp.org
+    #  - ADDITIONAL_CONFIG=
     container_name: ntp2038
     restart: on-failure:10
     cap_add:

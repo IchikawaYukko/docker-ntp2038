@@ -30,6 +30,13 @@ Default: `pool.ntp.org`
 同期する上流のNTPサーバを指定します  
 デフォルト: `pool.ntp.org`
 
+### ADDITIONAL_CONFIG
+Set additional configuration line if you want.  
+Default: ""
+
+追加設定値がある場合はここに書きます  
+デフォルト: ""
+
 # Test server
 You can connect to [ntp2038.akiba.yuriko.co.nz](ntp2038.akiba.yuriko.co.nz) for test this NTP server! (Sorry, IPv6 only)
 
