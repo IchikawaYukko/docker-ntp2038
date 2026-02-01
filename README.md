@@ -40,6 +40,8 @@ Default: ""
 # Test server
 You can connect to [ntp2038.akiba.yuriko.co.nz](ntp2038.akiba.yuriko.co.nz) for test this NTP server! (Sorry, IPv6 only)
 
+[ntp2038.yuriko.co.nz](ntp2038.yuriko.co.nz) also available for IPv4 network!
+
 Or run `ntpdate -qdv ntp2038.akiba.yuriko.co.nz` command like below!
 ```
 [root@trijn ~]# ntpdate -qdv ntp2038.akiba.yuriko.co.nz
