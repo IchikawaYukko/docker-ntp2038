@@ -1,0 +1,13 @@
+# docker-compose.override.yml for AWS EC2 NZ region.
+services:
+  ntp2038:
+    environment:
+      - SERVER=162.159.200.1
+      - ADDITIONAL_CONFIG=peer cisco-ucs.home.yuriko.co.nz iburst xleave
+    devices:
+      # No /dev/ptp devices in EC2 instances
+      - "/dev/null:/dev/ptp0"
+      - "/dev/null:/dev/ptp1"
+      - "/dev/null:/dev/ptp2"
+      - "/dev/null:/dev/ptp3"
+
