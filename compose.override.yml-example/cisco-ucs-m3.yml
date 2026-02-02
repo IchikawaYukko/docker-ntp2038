@@ -1,0 +1,7 @@
+services:
+  ntp2038:
+    image: ichikawayukko/ntp2038:chrony4.6.1
+    environment:
+      - SERVER=10.2.2.1
+      - ADDITIONAL_CONFIG=peer ntp2038.yuriko.co.nz iburst xleave
+
