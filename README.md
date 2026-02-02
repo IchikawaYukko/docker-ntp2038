@@ -38,9 +38,7 @@ Default: ""
 デフォルト: ""
 
 # Test server
-You can connect to [ntp2038.akiba.yuriko.co.nz](ntp2038.akiba.yuriko.co.nz) for test this NTP server! (Sorry, IPv6 only)
-
-[ntp2038.yuriko.co.nz](ntp2038.yuriko.co.nz) also available for IPv4 network!
+You can connect to [ntp2038.yuriko.co.nz](ntp2038.yuriko.co.nz)(IPv4/IPv6), [ntp2038.akiba.yuriko.co.nz](ntp2038.akiba.yuriko.co.nz)(IPv6 only) for test this NTP server!
 
 Or run `ntpdate -qdv ntp2038.akiba.yuriko.co.nz` command like below!
 ```
@@ -71,6 +69,15 @@ delay 0.03461, dispersion 0.00000
 offset 410160237.095359
 
 26 Mar 03:45:02 ntpdate[24378]: step time server 2001:470:fd50:20:662:73ff:fe5f:c06c offset 410160237.095359 sec
+```
+
+If `ntpdate` command is not available, run `chronyd -QU 'server ntp2038.yuriko.co.nz iburst'` instead.
+```
+[yuriko@i-004b276ed8c2b2733 ~]$ chronyd -QU 'server ntp2038.yuriko.co.nz iburst'
+2026-02-02T01:40:33Z chronyd version 4.3 starting (+CMDMON +NTP +REFCLOCK +RTC +PRIVDROP +SCFILTER +SIGND +ASYNCDNS +NTS +SECHASH +IPV6 +DEBUG)
+2026-02-02T01:40:33Z Disabled control of system clock
+2026-02-02T01:40:38Z System clock wrong by 378691199.979726 seconds (ignored)
+2026-02-02T01:40:38Z chronyd exiting
 ```
 
 You can set source for chronyd or ntpd to monitor offset. (it should be 4747days)
